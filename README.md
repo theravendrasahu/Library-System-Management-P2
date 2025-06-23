@@ -1,21 +1,19 @@
 # Library Management System using SQL Project --P2
-
 ## Project Overview
 
 **Project Title**: Library Management System  
 **Level**: Intermediate  
-**Database**: `library_db`
+**Database**: `library_project`
 
-This project demonstrates the implementation of a Library Management System using SQL. It includes creating and managing tables, performing CRUD operations, and executing advanced SQL queries. The goal is to showcase skills in database design, manipulation, and querying.
-
-![Library_project](https://github.com/najirh/Library-System-Management---P2/blob/main/library.jpg)
+This project illustrates the development of a Library Management System using SQL. It encompasses the creation and management of tables, execution of CRUD operations, and the implementation of advanced SQL queries. The primary aim is to demonstrate proficiency in database design, manipulation, and querying.
+Library management system.png
 
 ## Objectives
 
-1. **Set up the Library Management System Database**: Create and populate the database with tables for branches, employees, members, books, issued status, and return status.
-2. **CRUD Operations**: Perform Create, Read, Update, and Delete operations on the data.
-3. **CTAS (Create Table As Select)**: Utilize CTAS to create new tables based on query results.
-4. **Advanced SQL Queries**: Develop complex queries to analyze and retrieve specific data.
+1. **Database Setup**: Establish and populate the database with tables for branches, employees, members, books, issued status, and return status.
+2. **CRUD Operations**: Execute Create, Read, Update, and Delete operations on the data.
+3. **CTAS (Create Table As Select)**: Apply CTAS to generate new tables based on query results.
+4. **Advanced SQL Queries**: Formulate complex queries to analyze and extract specific data.
 
 ## Project Structure
 
