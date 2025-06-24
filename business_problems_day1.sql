@@ -99,9 +99,21 @@ SELECT e.emp_name, b.manager_id
 
 -- Task 11. **Create a Table of Books with Rental Price Above a 7USD
 CREATE TABLE books_price_greater_than_seven
-
+AS
 SELECT * FROM books
-WHERE rental
+WHERE rental_price > 7
+
+--Task 12: **Retrieve the List of Books Not Yet Returned**
+SELECT * FROM issued_status
+SELECT * FROM return_status
+
+SELECT 
+		DISTINCT i.issued_book_isbn
+FROM issued_status AS i
+LEFT JOIN return_status AS r
+ON i.issued_id= r.issued_id
+WHERE r.return_id IS NULL;
+
 
 
 
