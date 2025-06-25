@@ -432,7 +432,6 @@ issued but not returned within 30 days. The table should include:
     Number of overdue books
     Total fines 
 
-
 **Task 19: Stored Procedure**
 Objective:
 Create a stored procedure to manage the status of books in a library system.
