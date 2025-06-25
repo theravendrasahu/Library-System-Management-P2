@@ -431,15 +431,16 @@ issued but not returned within 30 days. The table should include:
     Number of overdue books
     Total fines 
 
-**Task 19: Stored Procedure**
-Objective:
+## Objective
 Create a stored procedure to manage the status of books in a library system.
+
 Description:
-Write a stored procedure that updates the status of a book in the library based on its issuance. The procedure should function as follows:
-The stored procedure should take the book_id as an input parameter.
-The procedure should first check if the book is available (status = 'yes').
-If the book is available, it should be issued, and the status in the books table should be updated to 'no'.
-If the book is not available (status = 'no'), the procedure should return an error message indicating that the book is currently not available.
+Develop a stored procedure that updates the status of a book based on its issuance. The procedure should operate as follows:
+
+1. Accept `book_id` as an input parameter.
+2. Check if the book is available (status = 'yes').
+3. If available, issue the book and update its status in the `books` table to 'no'.
+4. If not available (status = 'no'), return an error message indicating that the book is currently unavailable.
 
 ```sql
 
@@ -495,31 +496,30 @@ WHERE isbn = '978-0-375-41398-8'
 ```
 
 
-
 ## Reports
 
-- **Database Schema**: Detailed table structures and relationships.
-- **Data Analysis**: Insights into book categories, employee salaries, member registration trends, and issued books.
-- **Summary Reports**: Aggregated data on high-demand books and employee performance.
+- **Database Schema**: Comprehensive overview of table structures and their interrelations.
+- **Data Analysis**: Examination of insights related to book categories, employee salaries, member registration patterns, and issued books.
+- **Summary Reports**: Consolidated data on popular books and employee performance metrics.
 
 ## Conclusion
 
-This project demonstrates the application of SQL skills in creating and managing a library management system. It includes database setup, data manipulation, and advanced querying, providing a solid foundation for data management and analysis.
+This project showcases the utilization of SQL skills for developing and managing a library management system. It encompasses database setup, data manipulation, and advanced querying, establishing a robust foundation for effective data management and analysis.
 
 ## How to Use
 
-1. **Clone the Repository**: Clone this repository to your local machine.
-   ```sh
-   git clone https://github.com/najirh/Library-System-Management---P2.git
-   ```
+1. **Clone the Repository**: Clone this repository to your local environment.
+    ```sh
+    git clone https://github.com/theravendrasahu/Library-System-Management-P2
+    ```
 
-2. **Set Up the Database**: Execute the SQL scripts in the `database_setup.sql` file to create and populate the database.
-3. **Run the Queries**: Use the SQL queries in the `analysis_queries.sql` file to perform the analysis.
-4. **Explore and Modify**: Customize the queries as needed to explore different aspects of the data or answer additional questions.
+2. **Set Up the Database**: Run the SQL scripts found in the `database_setup.sql` file to create and populate the database.
+3. **Execute the Queries**: Utilize the SQL queries in the `analysis_queries.sql` file for data analysis.
+4. **Explore and Customize**: Modify the queries as necessary to investigate various aspects of the data or to address additional inquiries.
 
 ## Author - Zero Analyst
 
-This project showcases SQL skills essential for database management and analysis. For more content on SQL and data analysis, connect with me through the following channels:
+This project showcases SQL skills essential for database management and analysis. For more content on SQL and data analysis, connect with najir through the following channels:
 
 - **YouTube**: [Subscribe to my channel for tutorials and insights](https://www.youtube.com/@zero_analyst)
 - **Instagram**: [Follow me for daily tips and updates](https://www.instagram.com/zero_analyst/)
