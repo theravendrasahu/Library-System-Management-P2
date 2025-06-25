@@ -420,7 +420,7 @@ ON e.branch_id = b.branch_id
 GROUP BY 1, 2
 ```
 
-** Task 18: Create Table As Select (CTAS)**
+**Task 18: Create Table As Select (CTAS)**
 Objective: Create a CTAS (Create Table As Select) query to identify overdue books and calculate fines.
 Description: Write a CTAS query to create a new table that lists each member and the books they have
 issued but not returned within 30 days. The table should include:
