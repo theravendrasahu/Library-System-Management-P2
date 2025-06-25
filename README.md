@@ -21,7 +21,7 @@ This project illustrates the development of a Library Management System using SQ
 ### 1. Database Setup
 ![ERD](https://github.com/theravendrasahu/Library-System-Management-P2/blob/7764cbf5738c3281317133825be10e0038c13f4d/ERD%20Library%20managment%20system.png)
 
-- **Database Creation**: Created a database named `library_db`.
+- **Database Creation**: Created a database named `library_project`.
 - **Table Creation**: Created tables for branches, employees, members, books, issued status, and return status. Each table includes relevant columns and relationships.
 
 ```sql
