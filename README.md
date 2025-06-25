@@ -348,9 +348,6 @@ CALL add_return_records('RS148', 'IS140', 'Good');
 
 ```
 
-
-
-
 **Task 15: Branch Performance Report**  
 Create a query that generates a performance report for each branch, showing the number of books issued, the number of books returned, and the total revenue generated from book rentals.
 
