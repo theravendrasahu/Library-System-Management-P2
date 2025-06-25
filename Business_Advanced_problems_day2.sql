@@ -195,11 +195,56 @@ SELECT * FROM return_status;
 
 
 
+CREATE OR REPLACE PROCEDURE books_issued(p_issued_id VARCHAR(10), p_issued_member_id VARCHAR(30), p_issued_book_isbn VARCHAR(50), p_issued_emp_id VARCHAR(10))
+LANGUAGE plpgsql
+AS $$
+DECLARE
+		v_status VARCHAR(10);
+		v_book_name VARCHAR(80);
+BEGIN
+
+	SELECT 
+        status,
+		book_title
+        INTO
+        v_status,
+		v_book_name
+    FROM books
+    WHERE isbn = p_issued_book_isbn;
+	
+	IF
+		v_status = 'yes' THEN
+			INSERT INTO issued_status(issued_id, issued_member_id, issued_book_name, issued_date, issued_book_isbn, issued_emp_id)
+			VALUES (p_issued_id, p_issued_member_id, v_book_name, CURRENT_DATE, p_issued_book_isbn, p_issued_emp_id);
+
+			UPDATE books
+			SET status = 'no'
+			WHERE isbn = p_issued_book_isbn;
+
+			RAISE NOTICE 'Thank you for issued the book: %', v_book_name;
+	
+		ELSE 
+			RAISE NOTICE 'Sorry to inform you that book is unavilable: %', v_book_name;
+	END IF;
+END;
+$$
 
 
+-- Testing The function
+SELECT * FROM books;
+-- "978-0-553-29698-2" -- yes
+-- "978-0-375-41398-8" -- no
+SELECT * FROM issued_status;
+
+CALL books_issued('IS155', 'C108', '978-0-553-29698-2', 'E104');
+CALL books_issued('IS156', 'C108', '978-0-375-41398-8', 'E104');
 
 
+SELECT * FROM books
+WHERE isbn = '978-0-553-29698-2'
 
+SELECT * FROM books
+WHERE isbn = '978-0-375-41398-8'
 
 
 
