@@ -151,9 +151,37 @@ issued but not returned within 30 days. The table should include:
     The resulting table should show:
     Member ID
     Number of overdue books
-    Total fines   */
+    Total fines  */
+CREATE TABLE overdue_books_fines AS
+SELECT 
+    m.member_id,
+    COUNT(CASE 
+             WHEN rst.return_date IS NULL 
+                  AND ist.issued_date <= CURRENT_DATE - INTERVAL '30 days' 
+             THEN 1 
+          END) AS overdue_books,
+    SUM(CASE 
+             WHEN rst.return_date IS NULL 
+                  AND ist.issued_date <= CURRENT_DATE - INTERVAL '30 days' 
+             THEN 0.50 * (CURRENT_DATE - ist.issued_date - 30) 
+        END) AS total_fines
+FROM issued_status ist
+JOIN members m ON m.member_id = ist.issued_member_id
+LEFT JOIN return_status rst ON rst.issued_id = ist.issued_id
+GROUP BY m.member_id
+ORDER BY overdue_books DESC;
+
+select * from overdue_books_fines
 
 
+/* */
+
+
+SELECT * FROM branch;
+SELECT * FROM issued_status;
+SELECT * FROM employees;
+SELECT * FROM books;
+SELECT * FROM return_status;
 
 
 
