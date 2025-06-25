@@ -110,6 +110,55 @@ ON rs.issued_id = ist.issued_id
 GROUP BY 1
 ORDER BY 2 DESC, 3;
 
+/*
+**Task 16: CTAS: Create a Table of Active Members**  
+Use the CREATE TABLE AS (CTAS) statement to create a new table 
+active_members containing members who have issued at least one book in the last 2 months.
+*/
+CREATE TABLE active_members
+AS
+SELECT DISTINCT ist.issued_member_id
+FROM members as m
+JOIN issued_status as ist
+ON ist.issued_member_id = m.member_id
+WHERE ist.issued_date >= CURRENT_DATE - INTERVAL '2 MONTH';
+
+SELECT * FROM active_members;
+
+/*
+Task 17: Find Employees with the Most Book Issues Processed  
+Write a query to find the top 3 employees who have processed 
+the most book issues. Display the employee name, number of books processed, and their branch.
+*/
+
+
+SELECT ist.issued_emp_id, e.emp_name, e.branch_id,  count(ist.issued_id) as total_books_issued
+FROM employees as e
+JOIN issued_status AS ist
+ON ist.issued_emp_id = e.emp_id
+GROUP BY 1, 2, 3
+ORDER BY count(ist.issued_id) DESC
+LIMIT 3;
+
+
+/* Task 18: Create Table As Select (CTAS)
+Objective: Create a CTAS (Create Table As Select) query to identify overdue books and calculate fines.
+Description: Write a CTAS query to create a new table that lists each member and the books they have
+issued but not returned within 30 days. The table should include:
+    The number of overdue books.
+    The total fines, with each day's fine calculated at $0.50.
+    The number of books issued by each member.
+    The resulting table should show:
+    Member ID
+    Number of overdue books
+    Total fines   */
+
+
+
+
+
+
+
 
 
 
