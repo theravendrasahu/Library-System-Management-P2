@@ -72,6 +72,7 @@ CREATE TABLE members
 	member_address VARCHAR(20),
 	reg_date DATE
 );
+
 --Create issued_status tables
 DROP TABLE IF EXISTS issued_status;
 CREATE TABLE issued_status
