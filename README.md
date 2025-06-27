@@ -323,7 +323,6 @@ $$
 
 
 -- Testing FUNCTION add_return_records
-
 issued_id = IS135
 ISBN = WHERE isbn = '978-0-307-58837-1'
 
