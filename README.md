@@ -191,7 +191,6 @@ ON ist.issued_book_isbn = b.isbn
 GROUP BY b.isbn, b.book_title;
 ```
 
-
 ### 4. Data Analysis & Findings
 
 The following SQL queries were used to address specific questions:
