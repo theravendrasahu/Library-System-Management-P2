@@ -283,7 +283,6 @@ WHERE
 ORDER BY 1;
 ```
 
-
 **Task 14: Update Book Status on Return**  
 Write a query to update the status of books in the books table to "Yes" when they are returned (based on entries in the return_status table).
 
